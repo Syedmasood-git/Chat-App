@@ -10,10 +10,10 @@ h1{
     text-align: center;
 }
 .form-username{
-    display: none;  /* this has to be reversed to block */
+    display: block;  /* this has to be reversed to block */
 }
 .chatroom-container{
-    display: block; /* this has to be reversed to none */
+    display: none; /* this has to be reversed to none */
     height: 100vh;
     width: 100%;
 }

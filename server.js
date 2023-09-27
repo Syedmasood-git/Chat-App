@@ -4,14 +4,14 @@ const http=require('http');
 const server=http.createServer(app);
 const {Server}=require("socket.io")
 const io=new Server(server);
-
-io.on('connection',()=>{
-
+const PORT=8888;
+io.on('connection',(socket)=>{
+    console.log(socket.id);
+    socket.on('secret message',(data)=>{
+        io.emit('secret message',data);
+    })
 })
 app.use(express.static('public'))
 
-const PORT=8888;
-console.log("hello")
-server.listen(PORT,()=>{
-    console.log("connected to port")
-})
+
+server.listen(PORT);
